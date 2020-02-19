@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite for firefox" >
+    <parameter name="browserValue" value="firefox"/>
+    <listeners>
+        <listener class-name="ua.rabota.Listener"/>
+    </listeners>
+    <test name="Firefox tests" >
+       <classes>
+           <class name="ua.rabota.TestLogin"/>
+
+         </classes>
+    </test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test suite for firefox]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browserValue" value="firefox"/>
+  <listeners>
+    <listener class-name="ua.rabota.Listener"/>
+  </listeners>
+  <test thread-count="5" name="Firefox tests(failed)" verbose="0">
+    <classes>
+      <class name="ua.rabota.TestLogin">
+        <methods>
+          <include name="testLog"/>
+          <include name="takeScreenshot"/>
+          <include name="testCountCV"/>
+          <include name="testEmail"/>
+          <include name="tearDown"/>
+          <include name="testLoginPositive"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- ua.rabota.TestLogin -->
+    </classes>
+  </test> <!-- Firefox tests(failed) -->
+</suite> <!-- Failed suite [Test suite for firefox] -->

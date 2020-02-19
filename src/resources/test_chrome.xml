@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite for chrome">
+    <parameter name="browserValue" value="chrome"/>
+    <listeners>
+        <listener class-name="ua.rabota.ScreenshotCreator" />
+        <listener class-name="ua.rabota.Listener"/>
+    </listeners>
+    <test name="Chrome test">
+       <classes>
+           <class name="ua.rabota.TestLogin"/>
+
+         </classes>
+    </test>
+</suite>

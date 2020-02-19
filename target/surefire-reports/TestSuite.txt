@@ -1,0 +1,148 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 23, Failures: 16, Errors: 0, Skipped: 7, Time elapsed: 241.254 s <<< FAILURE! - in TestSuite
+ua.rabota.TestLogin.testEmail  Time elapsed: 33.007 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testEmail(TestLogin.java:63)
+
+ua.rabota.TestLogin.testEmail  Time elapsed: 31.234 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testEmail(TestLogin.java:63)
+
+ua.rabota.TestLogin.testLoginPositive  Time elapsed: 31.2 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testLoginPositive(TestLogin.java:82)
+
+ua.rabota.TestLogin.testLoginPositive  Time elapsed: 31.159 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testLoginPositive(TestLogin.java:82)
+
+ua.rabota.TestLogin.testLog  Time elapsed: 31.369 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testLog(TestLogin.java:45)
+
+ua.rabota.TestLogin.testCountCV  Time elapsed: 31.139 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testCountCV(TestLogin.java:102)
+
+ua.rabota.TestLogin.testCountCV  Time elapsed: 31.234 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span"}
+  (Session info: chrome=80.0.3987.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.100, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KATERY~1.ROZ\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:54959}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6afa921f79821a004c410d41106b6fa7
+*** Element info: {Using=xpath, value=.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span}
+	at ua.rabota.TestLogin.testCountCV(TestLogin.java:102)
+
+ua.rabota.TestLogin.setUp  Time elapsed: 39.462 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+newSession
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WS-LV-CP1379', ip: '172.25.12.123', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: driver.version: FirefoxDriver
+remote stacktrace: stack backtrace:
+   0:   0x49dbf6 - <no info>
+   1:   0x435fd7 - <no info>
+   2:   0x442e70 - <no info>
+   3:   0x440e95 - <no info>
+   4:   0x41bb48 - <no info>
+   5:   0x404309 - <no info>
+   6:   0x4066b7 - <no info>
+   7:   0x687086 - <no info>
+   8:   0x413b48 - <no info>
+   9:   0x6823d1 - <no info>
+  10: 0x752f6359 - BaseThreadInitThunk
+  11: 0x771c7b74 - RtlGetAppContainerNamedObjectPath
+	at ua.rabota.TestLogin.setUp(TestLogin.java:35)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.takeScreenshot  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.takeScreenshot(TestLogin.java:127)
+
+ua.rabota.TestLogin.tearDown  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.rabota.TestLogin.tearDown(TestLogin.java:144)
+

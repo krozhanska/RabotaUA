@@ -1,0 +1,39 @@
+package ua.rabota;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by k.rozhanska_tac on 20.06.2017.
+ */
+public class SingletonWB {
+    private static WebDriver driver;
+
+    public static WebDriver getInstance (String browser){
+        if (driver == null){
+            if (browser.equals("firefox")){
+                System.setProperty("webdriver.gecko.driver", "src\\resources\\geckodriver.exe");
+                driver =new FirefoxDriver();
+            } else if (browser.equals("chrome")){
+                System.setProperty("webdriver.chrome.driver","src\\resources\\chromedriver.exe");
+                driver = new ChromeDriver();
+            } else {
+                throw new UnsupportedOperationException("Unknown browser" +browser);
+            }
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
+        return driver;
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
+    public static void killWD(){
+        driver.quit();
+        driver = null;
+    }
+}

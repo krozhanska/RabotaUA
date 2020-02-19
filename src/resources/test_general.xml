@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="General_test_suite">
+
+    <suite-files>
+        <!--Chrome suite -->
+        <suite-file path="test_chrome.xml"/>
+        <!--Firefox suite -->
+        <suite-file path="test_firefox.xml"/>
+    </suite-files>
+</suite>
+
+
+
+
