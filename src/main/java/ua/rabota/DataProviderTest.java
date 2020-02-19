@@ -12,7 +12,7 @@ public class DataProviderTest {
     @DataProvider(name = "AuthenticationNotValid")
     public static Object[][] emails() {
 
-        return new Object[][] { { "email@"}, { "  email@com.ua"}};
+        return new Object[][] { { "email@"}, { "  @com.ua"}};
 
     }
 

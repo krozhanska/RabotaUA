@@ -33,8 +33,8 @@ public class TestLogin {
   @BeforeClass(alwaysRun = true)
   public void setUp(String browserValue) throws Exception {
     driver = SingletonWB.getInstance (browserValue);
-    baseUrl = "https://rabota.ua/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    baseUrl = "https://rabota.ua";
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.manage().window().maximize();
   }
 
@@ -70,7 +70,7 @@ public class TestLogin {
     } catch (Exception e) {
       result = false;
     }
-    assertTrue(result, "Element Неверный формат not found, ");
+    assertTrue(result, "Неверный формат");
 
   }
 
@@ -85,9 +85,10 @@ public class TestLogin {
     loginPage.enterPassword(sPass);
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
-    assertTrue(cabinet.getMyMenu().getText().contains(sName));
+    cabinet.getMyMenu().click();
+    assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
     CabinetPage cabinetPage = new CabinetPage(driver);
-    cabinetPage.getMyMenu().click();
+   // cabinetPage.getMyMenu().click();
     cabinetPage.getLogOut().click();
 
   }

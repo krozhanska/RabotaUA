@@ -13,16 +13,20 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     private WebDriver  driver;
-    @FindBy(id = "Sidebar_login_txbLogin")
+    @FindBy(id = "ctl00_Sidebar_login_txbLogin")
+    //Sidebar_login_txbLogin
     private WebElement useremail;
 
-    @FindBy(id = "Sidebar_login_txbPassword")
+    @FindBy(id = "ctl00_Sidebar_login_txbPassword")
+    //Sidebar_login_txbPassword
     private WebElement password;
 
-    @FindBy(id = "Sidebar_login_lnkLogin")
+    @FindBy(id = "ctl00_Sidebar_login_lnkLogin")
+    //Sidebar_login_lnkLogin
     private WebElement loginButton;
 
-    @FindBy(id = "content_ZoneLogin_pLogin")
+    @FindBy(id = "ctl00_content_ZoneLogin_pLogin")
+    //@FindBy(xpath = "//span[@class='error-message']")
     private WebElement notValidCredanceMessage;
 
     @FindBy(css = "span.error-message")
