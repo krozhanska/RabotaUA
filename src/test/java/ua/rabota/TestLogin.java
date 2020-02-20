@@ -83,10 +83,14 @@ public class TestLogin {
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
     cabinet.getMyMenu().click();
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    WebDriverWait wait = new WebDriverWait(driver, 120);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
+    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
     CabinetPage cabinetPage = new CabinetPage(driver);
-   // cabinetPage.getMyMenu().click();
+    cabinetPage.getMyMenu().click();
+    WebDriverWait wait2 = new WebDriverWait(driver, 120);
+    wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     cabinetPage.getLogOut().click();
 
   }
@@ -105,6 +109,7 @@ public class TestLogin {
     loginPage.getLoginButton().click();
     CabinetPage cabinetPage = new CabinetPage(driver);
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   // System.out.println(cabinetPage.getMyMenu().getCssValue().toString());
     cabinetPage.getMyMenu().click();
 
     cabinetPage.getCv().click();

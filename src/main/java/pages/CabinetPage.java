@@ -15,7 +15,7 @@ public class CabinetPage {
     private WebElement myMenu;
 
 
-    @FindBy(xpath = "//a[@class='f-header-menu-list-link-with-border -forloggedin']//span[@class='f-header-username-text']" )
+    @FindBy(css = ".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text" )
     //.//*[@id='Header_header']/div/header/div/div/ul/li[7]/div/label/span[2]/span
     private WebElement myMenuLabel;
 

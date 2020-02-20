@@ -15,9 +15,6 @@ public class MainPage {
 
     private WebDriver  driver;
     @FindBy(xpath = "//i[@class='fi-profile']")
-    //a[@class='f-header-menu-list-link-with-border']//label
-            //"a.f-header-menu-list-link-with-border > label > span")
-            //.//*[@id='Header_header']/div/header/div/div/ul/li[4]/a[1]/label/span
     private WebElement enterLogin;
     @FindBy(css = "a.f-header-logo.fd-f-center-middle")
     private WebElement mainLogo;
@@ -25,7 +22,7 @@ public class MainPage {
     public WebElement getEnterLogin() { return enterLogin; }
     public WebElement getMainLogo() { return  mainLogo; }
 
-    public By getBy (){return By.cssSelector("a.f-header-menu-list-link-with-border > label > span");}
+    //public By getBy (){return By.cssSelector("a.f-header-menu-list-link-with-border > label > span");}
 
     public MainPage (WebDriver webDriver) {
         this.driver = webDriver;
