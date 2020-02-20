@@ -1,9 +1,5 @@
 package pages;
 
-/**
- * Created by k.rozhanska on 20.06.2017.
- */
-
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,13 +19,15 @@ public class CabinetPage {
     //.//*[@id='Header_header']/div/header/div/div/ul/li[7]/div/label/span[2]/span
     private WebElement myMenuLabel;
 
-    @FindBy(xpath = "//li[@class='f-sidebar-menu-link f-sidebar-menu-link-with-icon']//li[1]//a[1]")
+    @FindBy(css = ".f-sidebar-menu-link:nth-child(1) > a")
+            //xpath = "//li[@class='f-sidebar-menu-link f-sidebar-menu-link-with-icon']//li[1]//a[1]")
     //.//*[@id='form']/aside/div/ul/li[2]/ul/li[1]/a
     //li[@class='f-sidebar-menu-link f-sidebar-menu-link-with-icon']//li[1]//a[1]
     private WebElement cv;
 
-    @FindBy(xpath = "//span[@class='fd-fat-merchant']")
-            //(css = "span.fd-fat-merchant")
+    @FindBy (css = ".fd-fat-merchant")
+            //(xpath = "//span[@class='fd-fat-merchant']")
+
     private WebElement messageNumberCV;
 
     @FindBy(id = "ctl00_Sidebar_loggedinJobsearcher_btnExit")

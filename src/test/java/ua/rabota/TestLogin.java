@@ -86,6 +86,7 @@ public class TestLogin {
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
     cabinet.getMyMenu().click();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
     CabinetPage cabinetPage = new CabinetPage(driver);
    // cabinetPage.getMyMenu().click();
@@ -107,6 +108,7 @@ public class TestLogin {
     loginPage.getLoginButton().click();
     CabinetPage cabinetPage = new CabinetPage(driver);
     cabinetPage.getMyMenu().click();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     cabinetPage.getCv().click();
 
     WebDriverWait wait = new WebDriverWait(driver, 20);
