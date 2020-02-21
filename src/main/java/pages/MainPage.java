@@ -14,7 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
 
     private WebDriver  driver;
-    @FindBy(xpath = "//i[@class='fi-profile']")
+    @FindBy(css = ".f-header-menu-list-link-with-border > label")
+            //(xpath = "//i[@class='fi-profile']")
     private WebElement enterLogin;
     @FindBy(css = "a.f-header-logo.fd-f-center-middle")
     private WebElement mainLogo;

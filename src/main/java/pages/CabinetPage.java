@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class CabinetPage {
 
     private WebDriver  driver;
-    @FindBy(xpath = "//a[@class='fd-beefy-serf']//i[@class='fi-profile']" )
+    @FindBy(css = "label > .fi-profile")
+            //(xpath = "//a[@class='fd-beefy-serf']//i[@class='fi-profile']" )
     //a[@class='fd-beefy-serf']//label
     //.//*[@id='Header_header']/div/header/div/div/ul/li[7]/div/label/span[2]/span
     private WebElement myMenu;

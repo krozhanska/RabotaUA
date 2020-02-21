@@ -85,15 +85,16 @@ public class TestLogin {
     cabinet.getMyMenu().click();
     WebDriverWait wait = new WebDriverWait(driver, 20);
     //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
+    //wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
+    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text")));
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     //assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
     assertTrue(cabinet.getMessageNameSurname().getText().contains(sName));
-    CabinetPage cabinetPage = new CabinetPage(driver);
-    cabinetPage.getMyMenu().click();
+    //CabinetPage cabinetPage = new CabinetPage(driver);
+    //cabinet.getMyMenu().click();
     WebDriverWait wait2 = new WebDriverWait(driver, 120);
     wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    cabinetPage.getLogOut().click();
+    cabinet.getLogOut().click();
 
   }
 
