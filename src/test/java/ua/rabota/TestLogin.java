@@ -85,6 +85,7 @@ public class TestLogin {
     cabinet.getMyMenu().click();
     WebDriverWait wait = new WebDriverWait(driver, 120);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
+    wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
     CabinetPage cabinetPage = new CabinetPage(driver);
