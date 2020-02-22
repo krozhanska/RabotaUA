@@ -92,7 +92,7 @@ public class TestLogin {
     //assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
 
     assertTrue(cabinet.getMessageNameSurname().getText().contains(sName));
-    System.out.println(cabinet.getMessageNameSurname().getText());
+    //System.out.println(cabinet.getMessageNameSurname().getText());
 
     CabinetPage cabinetPage = new CabinetPage(driver);
     cabinetPage.getMyMenu().click();
