@@ -73,7 +73,7 @@ public class TestLogin {
 
   @Test(dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest"})
-  public void testLoginPositive(String sEmail, String sPass, String sName){
+  public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
     driver.get(baseUrl + "/");
     MainPage main = new MainPage(driver);
     main.getEnterLogin().click();
@@ -94,8 +94,8 @@ public class TestLogin {
     assertTrue(cabinet.getMessageNameSurname().getText().contains(sName));
     //System.out.println(cabinet.getMessageNameSurname().getText());
 
-    CabinetPage cabinetPage = new CabinetPage(driver);
-    cabinetPage.getMyMenu().click();
+    //CabinetPage cabinetPage = new CabinetPage(driver);
+    //cabinetPage.getMyMenu().click();
     //WebDriverWait wait2 = new WebDriverWait(driver, 120);
     //wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     //cabinet.getLogOut().click();
@@ -110,7 +110,7 @@ public class TestLogin {
           dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest", "smoketest" },
           alwaysRun = true)
-  public void testCountCV(String sEmail, String sPass, String sName){
+  public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
     driver.get(baseUrl + "/");
     MainPage main = new MainPage(driver);
     main.getEnterLogin().click();
@@ -128,7 +128,7 @@ public class TestLogin {
     WebDriverWait wait = new WebDriverWait(driver, 20);
     wait.until(ExpectedConditions.visibilityOf(cabinetPage.getMessageNumberCV()));
 
-    assertTrue(cabinetPage.getMessageNumberCV().getText().contains("0")) ;
+    assertTrue(cabinetPage.getMessageNumberCV().getText().contains(NumberCV)) ;
     WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
     JavascriptExecutor executor = (JavascriptExecutor)driver;
     executor.executeScript("arguments[0].click();", element);
