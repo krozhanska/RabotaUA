@@ -87,14 +87,22 @@ public class TestLogin {
     //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     //wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text")));
+
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     //assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
+
     assertTrue(cabinet.getMessageNameSurname().getText().contains(sName));
-    //CabinetPage cabinetPage = new CabinetPage(driver);
+    System.out.println(cabinet.getMessageNameSurname().getText());
+
+    CabinetPage cabinetPage = new CabinetPage(driver);
+    cabinetPage.getMyMenu().click();
+    //WebDriverWait wait2 = new WebDriverWait(driver, 120);
+    //wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
+    //cabinet.getLogOut().click();
     //cabinet.getMyMenu().click();
-    WebDriverWait wait2 = new WebDriverWait(driver, 120);
-    wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    cabinet.getLogOut().click();
+    WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
+    JavascriptExecutor executor = (JavascriptExecutor)driver;
+    executor.executeScript("arguments[0].click();", element);
 
   }
 
@@ -121,8 +129,11 @@ public class TestLogin {
     wait.until(ExpectedConditions.visibilityOf(cabinetPage.getMessageNumberCV()));
 
     assertTrue(cabinetPage.getMessageNumberCV().getText().contains("0")) ;
-    cabinetPage.getMyMenu().click();
-    cabinetPage.getLogOut().click();
+    WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
+    JavascriptExecutor executor = (JavascriptExecutor)driver;
+    executor.executeScript("arguments[0].click();", element);
+    //cabinetPage.getMyMenu().click();
+    //cabinetPage.getLogOut().click();
 
   }
 
