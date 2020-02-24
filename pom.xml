@@ -87,7 +87,7 @@
                     <parallel>method</parallel>
                     <threadCount>10</threadCount>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/resources/test_chrome.xml</suiteXmlFile>
+                        <suiteXmlFile>src/resources/test_general.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
