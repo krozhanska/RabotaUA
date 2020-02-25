@@ -17,7 +17,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
 
 public class TestLogin {
@@ -76,22 +75,21 @@ public class TestLogin {
   public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
     driver.get(baseUrl + "/");
     MainPage main = new MainPage(driver);
-    main.getEnterLogin().click();
-    LoginPage loginPage = new LoginPage(driver);
+    LoginPage loginPage = main.openLoginForm();
     loginPage.enterEmail(sEmail);
     loginPage.enterPassword(sPass);
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
     cabinet.getMyMenu().click();
-    WebDriverWait wait = new WebDriverWait(driver, 20);
+    //WebDriverWait wait = new WebDriverWait(driver, 20);
     //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
     //wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text")));
+    //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text")));
 
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     //assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
 
-    assertTrue(cabinet.getMessageNameSurname().getText().contains(sName));
+    assertTrue(cabinet.getMessageNameSurname().contains(sName));
     //System.out.println(cabinet.getMessageNameSurname().getText());
 
     //CabinetPage cabinetPage = new CabinetPage(driver);
@@ -103,7 +101,6 @@ public class TestLogin {
     WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
     JavascriptExecutor executor = (JavascriptExecutor)driver;
     executor.executeScript("arguments[0].click();", element);
-
   }
 
   @Test (dependsOnMethods = {"testLoginPositive"},
@@ -113,7 +110,7 @@ public class TestLogin {
   public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
     driver.get(baseUrl + "/");
     MainPage main = new MainPage(driver);
-    main.getEnterLogin().click();
+    main.openLoginForm();
     LoginPage loginPage = new LoginPage(driver);
     loginPage.enterEmail(sEmail);
     loginPage.enterPassword(sPass);

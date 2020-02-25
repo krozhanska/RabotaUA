@@ -34,14 +34,15 @@ public class CabinetPage {
     @FindBy(id = "ctl00_Sidebar_loggedinJobsearcher_btnExit")
     private WebElement logOut;
 
-    @FindBy(css = "span.f-header-menu-list-link-with-border.-forloggedin > span.f-header-username-text")
+    //@FindBy(css = "span.f-header-menu-list-link-with-border.-forloggedin > span.f-header-username-text")
+    @FindBy(css = ".f-sidebar  .f-header-username-text")
     private WebElement messageNameSurname;
 
     public WebElement getMyMenu() { return myMenu; }
     public WebElement getMyMenuLabel() { return myMenuLabel; }
     public WebElement getCv() { return cv; }
     public WebElement getMessageNumberCV() { return messageNumberCV; }
-    public WebElement getMessageNameSurname() { return messageNameSurname; }
+    public String getMessageNameSurname() { return messageNameSurname.getText(); }
     public WebElement getLogOut() { return logOut; }
 
     public CabinetPage(WebDriver webDriver) {

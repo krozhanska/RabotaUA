@@ -13,25 +13,31 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    private WebDriver  driver;
+    private WebDriver driver;
     @FindBy(css = ".f-header-menu-list-link-with-border > label")
-            //(xpath = "//i[@class='fi-profile']")
+    //(xpath = "//i[@class='fi-profile']")
     private WebElement enterLogin;
     @FindBy(css = "a.f-header-logo.fd-f-center-middle")
     private WebElement mainLogo;
 
-    public WebElement getEnterLogin() { return enterLogin; }
-    public WebElement getMainLogo() { return  mainLogo; }
+    public LoginPage openLoginForm() {
+        enterLogin.click();
+        return new LoginPage(this.driver);
+    }
+
+    public WebElement getMainLogo() {
+        return mainLogo;
+    }
 
     //public By getBy (){return By.cssSelector("a.f-header-menu-list-link-with-border > label > span");}
 
-    public MainPage (WebDriver webDriver) {
+    public MainPage(WebDriver webDriver) {
         this.driver = webDriver;
         PageFactory.initElements(driver, this);
 
     }
 
-    public void setEnterLogin(){
+    public void setEnterLogin() {
         enterLogin.click();
     }
 
