@@ -36,7 +36,7 @@ public class TestLogin {
 
   @Test(groups = { "smoketest" })
   public void testLog() throws Exception {
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     MainPage main = new MainPage(driver);
     main.setEnterLogin();
     LoginPage loginPage = new LoginPage(driver);
@@ -54,7 +54,7 @@ public class TestLogin {
           groups = { "functest"})
   public void testEmail(String sEmail)throws Exception {
     boolean result = true;
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     MainPage main = new MainPage(driver);
     main.setEnterLogin();
     LoginPage loginPage = new LoginPage(driver);
@@ -73,34 +73,18 @@ public class TestLogin {
   @Test(dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest"})
   public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     MainPage main = new MainPage(driver);
     LoginPage loginPage = main.openLoginForm();
     loginPage.enterEmail(sEmail);
     loginPage.enterPassword(sPass);
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
-    cabinet.getMyMenu().click();
-    //WebDriverWait wait = new WebDriverWait(driver, 20);
-    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    //wait.until(ExpectedConditions.elementToBeClickable(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".f-header-name-and-avatar-wrap > .f-header-menu-list-link-with-border > .f-header-username-text")));
-
-    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    //assertTrue(cabinet.getMyMenuLabel().getText().contains(sName));
-
+    cabinet.toMyMenu();
     assertTrue(cabinet.getMessageNameSurname().contains(sName));
-    //System.out.println(cabinet.getMessageNameSurname().getText());
 
-    //CabinetPage cabinetPage = new CabinetPage(driver);
-    //cabinetPage.getMyMenu().click();
-    //WebDriverWait wait2 = new WebDriverWait(driver, 120);
-    //wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("id=ctl00_Sidebar_loggedinJobsearcher_btnExit")));
-    //cabinet.getLogOut().click();
-    //cabinet.getMyMenu().click();
-    WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
-    JavascriptExecutor executor = (JavascriptExecutor)driver;
-    executor.executeScript("arguments[0].click();", element);
+    cabinet.getLogOut();
+
   }
 
   @Test (dependsOnMethods = {"testLoginPositive"},
@@ -108,7 +92,7 @@ public class TestLogin {
           groups = { "functest", "smoketest" },
           alwaysRun = true)
   public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     MainPage main = new MainPage(driver);
     main.openLoginForm();
     LoginPage loginPage = new LoginPage(driver);
@@ -118,17 +102,19 @@ public class TestLogin {
     CabinetPage cabinetPage = new CabinetPage(driver);
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
    // System.out.println(cabinetPage.getMyMenu().getCssValue().toString());
-    cabinetPage.getMyMenu().click();
+    cabinetPage.toMyMenu();
 
-    cabinetPage.getCv().click();
+    cabinetPage.getCv();
 
-    WebDriverWait wait = new WebDriverWait(driver, 20);
-    wait.until(ExpectedConditions.visibilityOf(cabinetPage.getMessageNumberCV()));
+    //WebDriverWait wait = new WebDriverWait(driver, 20);
+    //wait.until(ExpectedConditions.visibilityOf(cabinetPage.getMessageNumberCV()));
 
-    assertTrue(cabinetPage.getMessageNumberCV().getText().contains(NumberCV)) ;
-    WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
-    JavascriptExecutor executor = (JavascriptExecutor)driver;
-    executor.executeScript("arguments[0].click();", element);
+    assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV)) ;
+    cabinetPage.toMyMenu();
+    cabinetPage.getLogOut();
+    //WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
+    //JavascriptExecutor executor = (JavascriptExecutor)driver;
+    //executor.executeScript("arguments[0].click();", element);
     //cabinetPage.getMyMenu().click();
     //cabinetPage.getLogOut().click();
 

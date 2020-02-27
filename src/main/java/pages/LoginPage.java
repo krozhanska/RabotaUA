@@ -1,5 +1,7 @@
 package pages;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,17 +44,19 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
 
     }
-    private LoginPage enterText(WebElement element, String text){
+    @Contract("_, _ -> this")
+    public void enterText(@NotNull WebElement element, String text){
         element.clear();
         element.sendKeys(text);
-        return this;
 
     }
 
-    public LoginPage enterPassword(String pass){return enterText(password, pass); }
+    public void enterPassword(String pass){
+        enterText(password, pass);
+    }
 
-    public LoginPage enterEmail(String email){
-        return enterText(useremail, email);
+    public void enterEmail(String email){
+        enterText(useremail, email);
     }
 
 

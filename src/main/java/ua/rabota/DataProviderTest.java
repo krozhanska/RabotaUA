@@ -1,8 +1,5 @@
 package ua.rabota;
 
-/**
- * Created by k.rozhanska on 20.06.2017.
- */
 
 import org.testng.annotations.*;
 
