@@ -1,7 +1,6 @@
 package pages;
 
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,8 +43,8 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
 
     }
-    @Contract("_, _ -> this")
-    public void enterText(@NotNull WebElement element, String text){
+
+    public void enterText( WebElement element, String text){
         element.clear();
         element.sendKeys(text);
 
