@@ -8,6 +8,8 @@
     <test name="Chrome test">
        <classes>
            <class name="ua.rabota.TestLogin"/>
+           <class name="ua.rabota.TestCabinetPage"/>
+           <class name="ua.rabota.TestWrongEmail"/>
 
          </classes>
     </test>

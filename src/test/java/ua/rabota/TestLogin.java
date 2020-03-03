@@ -50,26 +50,6 @@ public class TestLogin {
   }
 
 
-  @Test(dataProvider = "AuthenticationNotValid", dataProviderClass = DataProviderTest.class,
-          groups = { "functest"})
-  public void testEmail(String sEmail)throws Exception {
-    boolean result = true;
-    driver.get(baseUrl);
-    MainPage main = new MainPage(driver);
-    main.setEnterLogin();
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.enterEmail(sEmail);
-    loginPage.getPassword().click();
-    try {
-      result= loginPage.getNotValidEmailMessage().isDisplayed();
-
-    } catch (Exception e) {
-      result = false;
-    }
-    assertTrue(result, "Неверный формат");
-
-  }
-
   @Test(dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest"})
   public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
@@ -84,39 +64,6 @@ public class TestLogin {
     assertTrue(cabinet.getMessageNameSurname().contains(sName));
 
     cabinet.getLogOut();
-
-  }
-
-  @Test (dependsOnMethods = {"testLoginPositive"},
-          dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
-          groups = { "functest", "smoketest" },
-          alwaysRun = true)
-  public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
-    driver.get(baseUrl);
-    MainPage main = new MainPage(driver);
-    main.openLoginForm();
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.enterEmail(sEmail);
-    loginPage.enterPassword(sPass);
-    loginPage.getLoginButton().click();
-    CabinetPage cabinetPage = new CabinetPage(driver);
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-   // System.out.println(cabinetPage.getMyMenu().getCssValue().toString());
-    cabinetPage.toMyMenu();
-
-    cabinetPage.getCv();
-
-    //WebDriverWait wait = new WebDriverWait(driver, 20);
-    //wait.until(ExpectedConditions.visibilityOf(cabinetPage.getMessageNumberCV()));
-
-    assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV)) ;
-    cabinetPage.toMyMenu();
-    cabinetPage.getLogOut();
-    //WebElement element = driver.findElement(By.id("ctl00_Sidebar_loggedinJobsearcher_btnExit"));
-    //JavascriptExecutor executor = (JavascriptExecutor)driver;
-    //executor.executeScript("arguments[0].click();", element);
-    //cabinetPage.getMyMenu().click();
-    //cabinetPage.getLogOut().click();
 
   }
 
@@ -147,36 +94,5 @@ public class TestLogin {
     SingletonWB.killWD();
   }
 
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
 
-  private boolean isAlertPresent() {
-    try {
-      driver.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
 }
