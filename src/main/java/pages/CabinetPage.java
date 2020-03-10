@@ -36,16 +36,19 @@ public class CabinetPage {
     public void toMyMenu() {
         WebDriverWait wait = new WebDriverWait(this.driver, 35);
         wait.until(ExpectedConditions.elementToBeClickable(myMenu));
-
         myMenu.click();
     }
    // public WebElement getMyMenuLabel() { return myMenuLabel; }
     public void getCv() {
+        WebDriverWait wait = new WebDriverWait(this.driver, 35);
+        wait.until(ExpectedConditions.elementToBeClickable(cv));
         cv.click();
     }
     public String     getMessageNumberCV() { return messageNumberCV.getText(); }
     public String     getMessageNameSurname() { return messageNameSurname.getText(); }
-    public MainPage   getLogOut() {
+    public MainPage   clickLogOut() {
+        WebDriverWait wait = new WebDriverWait(this.driver, 35);
+        wait.until(ExpectedConditions.elementToBeClickable(logOut));
         logOut.click();
         return new MainPage(this.driver);}
 

@@ -2,8 +2,6 @@ package ua.rabota;
 
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
@@ -63,7 +61,7 @@ public class TestLogin {
     cabinet.toMyMenu();
     assertTrue(cabinet.getMessageNameSurname().contains(sName));
 
-    cabinet.getLogOut();
+    cabinet.clickLogOut();
 
   }
 

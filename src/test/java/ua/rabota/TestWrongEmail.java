@@ -5,7 +5,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.CabinetPage;
 import pages.LoginPage;
 import pages.MainPage;
 
@@ -37,7 +36,7 @@ public class TestWrongEmail {
         main.setEnterLogin();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterEmail(sEmail);
-        loginPage.getPassword().click();
+        loginPage.clickPassword();
         try {
             result= loginPage.getNotValidEmailMessage().isDisplayed();
 

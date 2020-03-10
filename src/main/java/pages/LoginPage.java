@@ -33,6 +33,7 @@ public class LoginPage {
 
     public WebElement getUseremail() {  return useremail;  }
     public WebElement getPassword() { return password;  }
+    public void       clickPassword() { password.click();  }
     public WebElement getLoginButton() { return loginButton; }
     public WebElement getNotValidCredanceMessage() { return notValidCredanceMessage; }
     public WebElement getNotValidEmailMessage() { return notValidEmailMessage; }
