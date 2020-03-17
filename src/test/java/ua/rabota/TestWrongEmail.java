@@ -37,12 +37,11 @@ public class TestWrongEmail {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterEmail(sEmail);
         loginPage.clickPassword();
-        try {
-            result= loginPage.getNotValidEmailMessage().isDisplayed();
-
-        } catch (Exception e) {
-            result = false;
+        if (loginPage.getNotValidEmailMessage().isDisplayed() ) {
+            result= true;
         }
+        else {result = false;}
+
         assertTrue(result, "Неверный формат");
 
     }
