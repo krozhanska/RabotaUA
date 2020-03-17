@@ -40,10 +40,10 @@ public class TestCabinetPage {
         loginPage.enterPassword(sPass);
         loginPage.getLoginButton().click();
         CabinetPage cabinetPage = new CabinetPage(driver);
-        cabinetPage.toMyMenu();
+        cabinetPage.clickMyMenu();
         cabinetPage.getCv();
         assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV)) ;
-        cabinetPage.toMyMenu();
+        cabinetPage.clickMyMenu();
         cabinetPage.clickLogOut();
 
     }

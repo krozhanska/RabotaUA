@@ -33,7 +33,7 @@ public class CabinetPage {
     @FindBy(css = ".f-sidebar  .f-header-username-text")
     private WebElement messageNameSurname;
 
-    public void toMyMenu() {
+    public void clickMyMenu() {
         WebDriverWait wait = new WebDriverWait(this.driver, 35);
         wait.until(ExpectedConditions.elementToBeClickable(myMenu));
         myMenu.click();

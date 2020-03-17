@@ -58,7 +58,7 @@ public class TestLogin {
     loginPage.enterPassword(sPass);
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
-    cabinet.toMyMenu();
+    cabinet.clickMyMenu();
     assertTrue(cabinet.getMessageNameSurname().contains(sName));
 
     cabinet.clickLogOut();
