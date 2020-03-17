@@ -23,12 +23,14 @@ public class ScreenshotCreator extends TestListenerAdapter {
         if (!result.isSuccess()){
             File scrFile = ((TakesScreenshot)SingletonWB.getDriver()).getScreenshotAs(OutputType.FILE);
             try {
-                String path = "C:\\Users\\kateryna.rozhanska\\IdeaProjects\\RabotaUA\\target\\screenshots\\"+methodName +"_"+format.format(calendar.getTime())+".png";
+                String path = "C:\\Users\\admin\\IdeaProjects\\RabotaUA\\target\\screenshots\\"+methodName +"_"+format.format(calendar.getTime())+".png";
                 File fileOutput  = new File (path);
                 org.apache.commons.io.FileUtils.copyFile(scrFile, fileOutput);
-                Reporter.log("screenshot saved at "+fileOutput.getAbsolutePath()+"\\reports\\"+result.getName()+".jpg");
+                Reporter.log("<br>" + " screenshot saved at "+fileOutput.getAbsolutePath());
+                        //+"\\reports\\"+result.getName()+".jpg");
                 Reporter.log("<p><img src=\""+fileOutput.getAbsolutePath()+"\" alt=\""+path+"\"></p>");
-                Reporter.log("<a href='../"+result.getName()+".jpg' <img src='../"+result.getName()+".jpg' hight='100' width='100'/> </a>");
+                Reporter.log("<a href='"+fileOutput.getAbsolutePath()+"' <img src='"+fileOutput.getAbsolutePath()+"' hight='100' width='100'/> </a>");
+                //Reporter.log("<a href='../"+result.getName()+".jpg' <img src='../"+result.getName()+".jpg' hight='100' width='100'/> </a>");
                // Reporter.log("<a href='.."+ path +"'"+"><img scr='.."+ path+" height = '100' widh = '100' />screenshot</a>");
             } catch (IOException e){
                 e.printStackTrace();

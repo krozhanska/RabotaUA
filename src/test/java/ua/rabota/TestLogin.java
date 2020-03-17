@@ -1,18 +1,15 @@
 package ua.rabota;
 
 
-import org.openqa.selenium.*;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.annotations.*;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import pages.CabinetPage;
 import pages.LoginPage;
 import pages.MainPage;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
@@ -66,28 +63,7 @@ public class TestLogin {
   }
 
 
-  @AfterMethod(alwaysRun = true)
-  public void takeScreenshot(ITestResult result) {
-    Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat format = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
-    String methodName = result.getName();
-    if (!result.isSuccess()){
-      File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-      try {
-        String path = "../RabotaTestLogin/target/screenshots/"+methodName +"_"+format.format(calendar.getTime())+".png";
-        File fileOutput  = new File (path);
-        org.apache.commons.io.FileUtils.copyFile(scrFile, fileOutput);
-        Reporter.log("screenshot saved at "+fileOutput.getAbsolutePath()+"\\reports\\"+result.getName()+".jpg");
-        Reporter.log("<p><img src=\""+fileOutput.getAbsolutePath()+"\" alt=\""+path+"\"></p>");
-                //"<a href='../"+result.getName()+".jpg' <img src='../"+result.getName()+".jpg' hight='100' width='100'/> </a>");
-        //Reporter.log("<a href='.."+ path +"'"+"><img scr='.."+ path+" height = '100' widh = '100' />screenshot</a>");
-      } catch (IOException e){
-        e.printStackTrace();
-      }
-    }
-  }
-
-  @AfterClass(alwaysRun = true)
+   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
     SingletonWB.killWD();
   }
