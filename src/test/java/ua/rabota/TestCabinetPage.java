@@ -42,7 +42,7 @@ public class TestCabinetPage {
         CabinetPage cabinetPage = new CabinetPage(driver);
         cabinetPage.clickMyMenu();
         cabinetPage.getCv();
-        assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV)) ;
+        assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV), "Number of CV not matching ") ;
         cabinetPage.clickMyMenu();
         cabinetPage.clickLogOut();
 

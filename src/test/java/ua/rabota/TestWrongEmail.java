@@ -42,7 +42,7 @@ public class TestWrongEmail {
         }
         else {result = false;}
 
-        assertTrue(result, "Неверный формат");
+        assertTrue(result, "Not valid message not matching");
 
     }
 

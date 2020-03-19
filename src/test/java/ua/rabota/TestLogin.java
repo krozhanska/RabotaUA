@@ -56,7 +56,7 @@ public class TestLogin {
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
     cabinet.clickMyMenu();
-    assertTrue(cabinet.getMessageNameSurname().contains(sName));
+    assertTrue(cabinet.getMessageNameSurname().contains(sName), "Name, Surname not matching");
 
     cabinet.clickLogOut();
 
