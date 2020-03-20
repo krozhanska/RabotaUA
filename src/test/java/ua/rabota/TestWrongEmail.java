@@ -37,11 +37,7 @@ public class TestWrongEmail {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterEmail(sEmail);
         loginPage.clickPassword();
-        if (loginPage.getNotValidEmailMessage().isDisplayed() ) {
-            result= true;
-        }
-        else {result = false;}
-
+        result= loginPage.getNotValidEmailMessage().isDisplayed();
         assertTrue(result, "Not valid message not matching");
 
     }
