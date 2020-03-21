@@ -23,7 +23,7 @@ public class ScreenshotCreator extends TestListenerAdapter {
         if (!result.isSuccess()){
             File scrFile = ((TakesScreenshot)SingletonWB.getDriver()).getScreenshotAs(OutputType.FILE);
             try {
-                String path = "C:\\Users\\admin\\IdeaProjects\\RabotaUA\\target\\screenshots\\"+methodName +"_"+format.format(calendar.getTime())+".png";
+                String path = "./target/screenshots/"+methodName +"_"+format.format(calendar.getTime())+".png";
                 File fileOutput  = new File (path);
                 org.apache.commons.io.FileUtils.copyFile(scrFile, fileOutput);
                 Reporter.log("<br>" + " screenshot saved at "+fileOutput.getAbsolutePath());
