@@ -1,10 +1,7 @@
 package ua.rabota;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.CabinetPage;
 import pages.LoginPage;
 import pages.MainPage;
@@ -12,7 +9,7 @@ import pages.MainPage;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
-
+@Listeners({CustomTestListener.class})
 public class TestCabinetPage {
     private WebDriver driver;
     private String baseUrl;

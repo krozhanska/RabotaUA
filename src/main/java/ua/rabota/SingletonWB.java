@@ -15,10 +15,10 @@ public class SingletonWB {
     public static WebDriver getInstance (String browser){
         if (driver == null){
             if (browser.equals("firefox")){
-                System.setProperty("webdriver.gecko.driver", "src\\resources\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\geckodriver.exe");
                 driver =new FirefoxDriver();
             } else if (browser.equals("chrome")){
-                System.setProperty("webdriver.chrome.driver","src\\resources\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","src\\main\\resources\\chromedriver.exe");
                 driver = new ChromeDriver();
             } else {
                 throw new UnsupportedOperationException("Unknown browser" +browser);

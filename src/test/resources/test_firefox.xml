@@ -2,7 +2,7 @@
 <suite name="Test suite for firefox" >
     <parameter name="browserValue" value="firefox"/>
     <listeners>
-        <listener class-name="ua.rabota.Listener"/>
+        <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
     <test name="Firefox tests" >
        <classes>
