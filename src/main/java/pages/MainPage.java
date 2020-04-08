@@ -1,6 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +14,7 @@ public class MainPage {
     private WebElement enterLogin;
     @FindBy(css = "a.f-header-logo.fd-f-center-middle")
     private WebElement mainLogo;
-
+    @Step("Open Login form")
     public LoginPage openLoginForm() {
         enterLogin.click();
         return new LoginPage(this.driver);

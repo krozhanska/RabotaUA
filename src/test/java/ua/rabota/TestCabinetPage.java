@@ -27,7 +27,10 @@ public class TestCabinetPage {
     @Test(
             dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
             groups = { "functest", "smoketest" },
-            alwaysRun = true)
+            alwaysRun = true,
+            priority = 0,
+            description = "Test Description: verify number of CV with following parameters Email : (0), password : (1), number of CV must be : (3) " )
+
     public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
         driver.get(baseUrl);
         MainPage main = new MainPage(driver);

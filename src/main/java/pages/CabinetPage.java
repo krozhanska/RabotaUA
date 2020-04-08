@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +33,7 @@ public class CabinetPage {
 
     @FindBy(css = ".f-sidebar  .f-header-username-text")
     private WebElement messageNameSurname;
-
+   @Step("Click the My Menu")
     public void clickMyMenu() {
         WebDriverWait wait = new WebDriverWait(this.driver, 35);
         wait.until(ExpectedConditions.elementToBeClickable(myMenu));
@@ -46,6 +47,7 @@ public class CabinetPage {
     }
     public String     getMessageNumberCV() { return messageNumberCV.getText(); }
     public String     getMessageNameSurname() { return messageNameSurname.getText(); }
+    @Step("Click the Log OUt")
     public MainPage   clickLogOut() {
         WebDriverWait wait = new WebDriverWait(this.driver, 35);
         wait.until(ExpectedConditions.elementToBeClickable(logOut));

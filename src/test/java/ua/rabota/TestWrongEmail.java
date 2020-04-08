@@ -26,7 +26,9 @@ public class TestWrongEmail {
     }
 
     @Test(dataProvider = "AuthenticationNotValid", dataProviderClass = DataProviderTest.class,
-            groups = { "functest"})
+            groups = { "functest"},
+            description = "Test Description: verify wrong email with following parameters Email : (0)")
+
     public void testEmail(String sEmail)throws Exception {
         boolean result = true;
         driver.get(baseUrl);

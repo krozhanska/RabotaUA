@@ -1,8 +1,7 @@
 package ua.rabota;
 
 
-import org.testng.annotations.*;
-
+import org.testng.annotations.DataProvider;
 
 public class DataProviderTest {
 

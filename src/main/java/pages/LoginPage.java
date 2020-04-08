@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +34,7 @@ public class LoginPage {
 
     public WebElement getUseremail() {  return useremail;  }
     public WebElement getPassword() { return password;  }
+    @Step("Switch to the Password field")
     public void       clickPassword() { password.click();  }
     public WebElement getLoginButton() { return loginButton; }
     public WebElement getNotValidCredanceMessage() { return notValidCredanceMessage; }
@@ -50,11 +52,12 @@ public class LoginPage {
         element.sendKeys(text);
 
     }
-
+    @Step("Enter password: (0)")
     public void enterPassword(String pass){
         enterText(password, pass);
     }
 
+    @Step("Enter email: (0)")
     public void enterEmail(String email){
         enterText(useremail, email);
     }

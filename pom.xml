@@ -11,7 +11,7 @@
     <properties>
         <java.version>1.8</java.version>
         <maven.version>3.6.3</maven.version>
-        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.2</allure.version>
@@ -47,8 +47,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <!--<release>${java.version}</release>
+                    <executable>javac9</executable>-->
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+
                 </configuration>
             </plugin>
 
@@ -71,12 +74,15 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <systemProperties>
+                   <!-- <systemPropertyVariables>
+                        <allure.results.directory>${basedir}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>-->
+                    <!--<systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>${basedir}/target/allure-results</value>
+                            <value>C:/Users/admin/IdeaProjects/RabotaUA/target/allure-results</value>
                         </property>
-                    </systemProperties>
+                    </systemProperties>-->
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/test_chrome.xml/</suiteXmlFile>
                     </suiteXmlFiles>
@@ -93,10 +99,12 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.9</version>
-                <configuration>
+                <!--<configuration>
+                        <resultsDirectory>${basedir}/allure-results</resultsDirectory>
+                        <reportDirectory>${basedir}/allure-report</reportDirectory>
                     <resultsDirectory>${basedir}/target/allure-results</resultsDirectory>
                     <reportDirectory>${basedir}/target/allure-reports</reportDirectory>
-                </configuration>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>
@@ -108,6 +116,14 @@
             <version>7.1.0</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -148,10 +164,22 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
+            <version>7.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
             <version>7.1.0</version>
             <scope>compile</scope>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
@@ -161,5 +189,17 @@
 
     </dependencies>
 
-
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
