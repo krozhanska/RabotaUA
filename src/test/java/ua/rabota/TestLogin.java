@@ -9,6 +9,7 @@ import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static io.qameta.allure.Allure.step;
 import static org.testng.Assert.assertTrue;
 
 @Listeners({CustomTestListener.class})
@@ -29,12 +30,17 @@ public class TestLogin {
 
   @Test(groups = { "smoketest" })
   public void testLog() throws Exception {
+    step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
+    step("Open Login form");
     main.setEnterLogin();
     LoginPage loginPage = new LoginPage(driver);
+    step("Enter Email :emailns@gmail.com");
     loginPage.enterEmail("emailns@gmail.com");
+    step("Enter Password :123");
     loginPage.enterPassword("123");
+    step("Click Login button");
     loginPage.getLoginButton().click();
 
     assertTrue(loginPage.getNotValidCredanceMessage().getText().
@@ -46,16 +52,23 @@ public class TestLogin {
   @Test(dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest"})
   public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
+    step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
+    step("Open Login form");
     LoginPage loginPage = main.openLoginForm();
+    step("Enter email: {0}");
     loginPage.enterEmail(sEmail);
+    step("Enter password: {0}");
     loginPage.enterPassword(sPass);
+    step("Click Login button");
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);
+    step("Click My menu");
     cabinet.clickMyMenu();
-    assertTrue(cabinet.getMessageNameSurname().contains(sName), "Name, Surname not matching");
-
+    assertTrue(cabinet.getMessageNameSurname().contains(sName), "Name, Surname not matching" +
+            "");
+    step("Click Logout");
     cabinet.clickLogOut();
 
   }
