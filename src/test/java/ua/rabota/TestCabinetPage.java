@@ -8,6 +8,7 @@ import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static io.qameta.allure.Allure.step;
 import static org.testng.Assert.assertTrue;
 @Listeners({CustomTestListener.class})
 public class TestCabinetPage {
@@ -33,17 +34,26 @@ public class TestCabinetPage {
 
     public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
         driver.get(baseUrl);
+        step("Open browser");
         MainPage main = new MainPage(driver);
         main.openLoginForm();
+        step("Open Login form");
         LoginPage loginPage = new LoginPage(driver);
+        step("Enter Email");
         loginPage.enterEmail(sEmail);
+        step("Enter password");
         loginPage.enterPassword(sPass);
+        step("Click Log in button");
         loginPage.getLoginButton().click();
         CabinetPage cabinetPage = new CabinetPage(driver);
+        step("Click My menu button");
         cabinetPage.clickMyMenu();
+        step("Click My CV menu");
         cabinetPage.getCv();
         assertTrue(cabinetPage.getMessageNumberCV().contains(NumberCV), "Number of CV not matching ") ;
+        step("Click My menu button");
         cabinetPage.clickMyMenu();
+        step("Click Log out button");
         cabinetPage.clickLogOut();
 
     }

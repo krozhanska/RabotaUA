@@ -7,6 +7,7 @@ import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static io.qameta.allure.Allure.step;
 import static org.testng.Assert.assertTrue;
 
 @Listeners({CustomTestListener.class})
@@ -31,11 +32,15 @@ public class TestWrongEmail {
 
     public void testEmail(String sEmail)throws Exception {
         boolean result = true;
+        step("Open browser");
         driver.get(baseUrl);
         MainPage main = new MainPage(driver);
+        step("Open Login form");
         main.setEnterLogin();
         LoginPage loginPage = new LoginPage(driver);
+        step("Enter incorrect email");
         loginPage.enterEmail(sEmail);
+        step("Switch to the password field");
         loginPage.clickPassword();
         result= loginPage.getNotValidEmailMessage().isDisplayed();
         assertTrue(result, "Not valid message not matching");
