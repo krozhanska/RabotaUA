@@ -77,12 +77,7 @@
                    <!-- <systemPropertyVariables>
                         <allure.results.directory>${basedir}/allure-results</allure.results.directory>
                     </systemPropertyVariables>-->
-                    <!--<systemProperties>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>C:/Users/admin/IdeaProjects/RabotaUA/target/allure-results</value>
-                        </property>
-                    </systemProperties>-->
+
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/test_chrome.xml/</suiteXmlFile>
                     </suiteXmlFiles>
@@ -99,12 +94,11 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.9</version>
-                <!--<configuration>
-                        <resultsDirectory>${basedir}/allure-results</resultsDirectory>
-                        <reportDirectory>${basedir}/allure-report</reportDirectory>
+                <configuration>
+
                     <resultsDirectory>${basedir}/target/allure-results</resultsDirectory>
                     <reportDirectory>${basedir}/target/allure-reports</reportDirectory>
-                </configuration>-->
+                </configuration>
             </plugin>
         </plugins>
     </build>
