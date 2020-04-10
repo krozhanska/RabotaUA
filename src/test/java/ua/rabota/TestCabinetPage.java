@@ -39,9 +39,9 @@ public class TestCabinetPage {
         main.openLoginForm();
         step("Open Login form");
         LoginPage loginPage = new LoginPage(driver);
-        step("Enter Email");
+        step("Enter Email {0}");
         loginPage.enterEmail(sEmail);
-        step("Enter password");
+        step("Enter password {0}");
         loginPage.enterPassword(sPass);
         step("Click Log in button");
         loginPage.getLoginButton().click();

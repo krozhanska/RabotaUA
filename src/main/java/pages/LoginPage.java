@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BrowserSetup {
 
     private WebDriver  driver;
     @FindBy(id = "ctl00_Sidebar_login_txbLogin")
@@ -52,16 +52,19 @@ public class LoginPage {
         element.sendKeys(text);
 
     }
-    @Step("Enter password: (0)")
+    @Step("Enter password: {0}")
+
     public void enterPassword(String pass){
         enterText(password, pass);
     }
 
-    @Step("Enter email: (0)")
+    @Step("Enter email: {0}")
     public void enterEmail(String email){
         enterText(useremail, email);
     }
 
-
+    public WebDriver getDriver() {
+        return driver;
+    }
 
 }

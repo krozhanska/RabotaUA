@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CabinetPage {
+public class CabinetPage extends BrowserSetup {
 
     private WebDriver  driver;
     @FindBy
@@ -66,4 +66,7 @@ public class CabinetPage {
 
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class MainPage {
+public class MainPage extends BrowserSetup {
 
     private WebDriver driver;
     @FindBy(css = ".f-header-menu-list-link-with-border > label")
@@ -36,5 +36,8 @@ public class MainPage {
         enterLogin.click();
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
 
 }

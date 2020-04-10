@@ -1,13 +1,21 @@
 package ua.rabota;
 
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.IInvokedMethodListener;
+import org.testng.ISuiteListener;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
+import pages.BrowserSetup;
 
 /*import java.util.logging.Logger;*/
 
-public class CustomTestListener  extends TestListenerAdapter {
+public class CustomTestListener extends BrowserSetup implements ITestListener, ISuiteListener, IInvokedMethodListener {
+/*public class CustomTestListener extends TestListenerAdapter {*/
     private Logger log = (Logger) LoggerFactory.getLogger(CustomTestListener.class);
 
 
@@ -29,10 +37,17 @@ public class CustomTestListener  extends TestListenerAdapter {
         if (result.getThrowable()!=null) {
             result.getThrowable().printStackTrace();
         }
+        Object currentClass = result.getInstance();
+        WebDriver driver = ((BrowserSetup) currentClass).getDriver();
+
+        if (driver != null)
+        {makeScreenshot(driver); }
+
     }
 
-  /* @Attachment(value = "Page screenshot", type = "image/png")
-    public byte[] saveScreenshot(String name) {
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] makeScreenshot(WebDriver driver) {
+
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }*/
+    }
 }
