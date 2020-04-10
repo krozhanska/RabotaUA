@@ -21,15 +21,15 @@ public class TestLogin {
 
   @Parameters({"browserValue"})
   @BeforeClass(alwaysRun = true)
-  public void setUp(String browserValue) throws Exception {
-    driver = SingletonWB.getInstance (browserValue);
+  public void setUp(String browserValue)  {
+    driver = BrowserSetup.getInstance (browserValue);
     baseUrl = "https://rabota.ua";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     driver.manage().window().maximize();
   }
 
   @Test(groups = { "smoketest" })
-  public void testLog() throws Exception {
+  public void testLog()  {
     step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
@@ -75,8 +75,8 @@ public class TestLogin {
 
 
    @AfterClass(alwaysRun = true)
-  public void tearDown() throws Exception {
-    SingletonWB.killWD();
+  public void tearDown()  {
+    BrowserSetup.killWD();
   }
 
 

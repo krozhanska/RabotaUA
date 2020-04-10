@@ -18,8 +18,8 @@ public class TestCabinetPage {
 
     @Parameters({"browserValue"})
     @BeforeClass(alwaysRun = true)
-    public void setUp(String browserValue) throws Exception {
-        driver = SingletonWB.getInstance (browserValue);
+    public void setUp(String browserValue)  {
+        driver = BrowserSetup.getInstance (browserValue);
         baseUrl = "https://rabota.ua";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -29,7 +29,6 @@ public class TestCabinetPage {
             dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
             groups = { "functest", "smoketest" },
             alwaysRun = true,
-            priority = 0,
             description = "Test Description: verify number of CV with following parameters Email : (0), password : (1), number of CV must be : (3) " )
 
     public void testCountCV(String sEmail, String sPass, String sName, String NumberCV){
@@ -59,8 +58,8 @@ public class TestCabinetPage {
     }
 
     @AfterClass(alwaysRun = true)
-    public void tearDown() throws Exception {
-        SingletonWB.killWD();
+    public void tearDown()  {
+        BrowserSetup.killWD();
     }
 
 

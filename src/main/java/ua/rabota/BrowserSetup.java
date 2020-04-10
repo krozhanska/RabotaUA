@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 
-public class SingletonWB {
+public class BrowserSetup {
     private static WebDriver driver;
 
     public static WebDriver getInstance (String browser){

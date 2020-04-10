@@ -21,7 +21,7 @@ public class ScreenshotCreator extends TestListenerAdapter {
         SimpleDateFormat format = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
         String methodName = result.getName();
         if (!result.isSuccess()){
-            File scrFile = ((TakesScreenshot)SingletonWB.getDriver()).getScreenshotAs(OutputType.FILE);
+            File scrFile = ((TakesScreenshot) BrowserSetup.getDriver()).getScreenshotAs(OutputType.FILE);
             try {
                 String path = "./target/screenshots/"+methodName +"_"+format.format(calendar.getTime())+".png";
                 File fileOutput  = new File (path);
