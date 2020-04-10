@@ -2,7 +2,6 @@
 <suite name="Test suite for chrome">
     <parameter name="browserValue" value="chrome"/>
     <listeners>
-        <listener class-name="ua.rabota.ScreenshotCreator" />
         <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
     <test name="Chrome test">

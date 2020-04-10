@@ -37,11 +37,13 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
         if (result.getThrowable()!=null) {
             result.getThrowable().printStackTrace();
         }
-        Object currentClass = result.getInstance();
+        /*Object currentClass = result.getInstance();
         WebDriver driver = ((BrowserSetup) currentClass).getDriver();
 
         if (driver != null)
-        {makeScreenshot(driver); }
+        {makeScreenshot(driver); }*/
+        Object webDriverAttribute = result.getTestContext().getAttribute("WebDriver");
+        makeScreenshot((WebDriver) webDriverAttribute);
 
     }
 
