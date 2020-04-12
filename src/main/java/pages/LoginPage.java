@@ -63,8 +63,8 @@ public class LoginPage extends BrowserSetup {
         enterText(useremail, email);
     }
 
-    public WebDriver getDriver() {
+    /*public WebDriver getDriver() {
         return driver;
-    }
+    }*/
 
 }

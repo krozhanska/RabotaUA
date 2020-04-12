@@ -2,6 +2,7 @@ package ua.rabota;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+import pages.BrowserSetup;
 import pages.CabinetPage;
 import pages.LoginPage;
 import pages.MainPage;

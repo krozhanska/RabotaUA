@@ -36,8 +36,8 @@ public class MainPage extends BrowserSetup {
         enterLogin.click();
     }
 
-    public WebDriver getDriver() {
+    /*public WebDriver getDriver() {
         return driver;
-    }
+    }*/
 
 }
