@@ -4,7 +4,8 @@
     <listeners>
         <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
-    <test name="Firefox tests" >
+    <!--<test name="Firefox tests" >-->
+    <test name="TestParallel Firefox" parallel="methods" thread-count="3">
        <classes>
            <class name="ua.rabota.TestLogin"/>
            <class name="ua.rabota.TestCabinetPage"/>

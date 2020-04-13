@@ -7,20 +7,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserSetup {
-    public static WebDriver driver;
+    public WebDriver driver;
 
-    public static WebDriver getDriver() {
-        return driver;
+    public WebDriver getDriver() {
+        return this.driver;
     }
 
-    public static WebDriver getInstance(String browser) {
+    public WebDriver getInstance(String browser) {
 
         if (browser.equals("firefox")) {
             System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\geckodriver.exe");
-            driver = new FirefoxDriver();
+            this.driver = new FirefoxDriver();
         } else if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
-            driver = new ChromeDriver();
+            this.driver = new ChromeDriver();
         } else {
             throw new UnsupportedOperationException("Unknown browser" + browser);
         }
@@ -29,8 +29,8 @@ public class BrowserSetup {
         return driver;
     }
 
-    public static void killWD() {
-        driver.quit();
-        driver = null;
+    public void killWD() {
+       driver.quit();
+       driver = null;
     }
 }

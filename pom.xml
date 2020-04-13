@@ -77,7 +77,7 @@
                     </systemPropertyVariables>-->
 
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/test_general.xml/</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/test_general_parallel.xml/</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
                 <dependencies>

@@ -1,10 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test suite for chrome">
     <parameter name="browserValue" value="chrome"/>
+
     <listeners>
         <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
-    <test name="Chrome test">
+    <!--<test name="Chrome test">-->
+    <test name="TestParallel Chrome" parallel="methods" thread-count="3">
        <classes>
            <class name="ua.rabota.TestLogin"/>
            <class name="ua.rabota.TestCabinetPage"/>

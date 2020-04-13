@@ -5,20 +5,10 @@ package ua.rabota;
 //import org.apache.commons.*;
 //import org.openqa.selenium.*;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
-import pages.BrowserSetup;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class ScreenshotCreator extends TestListenerAdapter {
-    @Override
+   /* @Override
    public void onTestFailure(ITestResult result) {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat format = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
@@ -40,5 +30,5 @@ public class ScreenshotCreator extends TestListenerAdapter {
             }
         }
 
-    }
+    }*/
 }

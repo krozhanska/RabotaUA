@@ -21,7 +21,7 @@ public class TestWrongEmail {
     @Parameters({"browserValue"})
     @BeforeClass(alwaysRun = true)
     public void setUp(String browserValue)  {
-        driver = BrowserSetup.getInstance (browserValue);
+        driver = new BrowserSetup().getInstance (browserValue);
         baseUrl = "https://rabota.ua";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -50,6 +50,7 @@ public class TestWrongEmail {
 
     @AfterClass(alwaysRun = true)
     public void tearDown()  {
-        BrowserSetup.killWD();
+        driver.quit();
+        driver = null;
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="General_test_suite">
+<suite name="General_test_suite" parallel="tests" thread-count="2">
 
     <suite-files>
         <!--Chrome suite -->
