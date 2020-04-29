@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
-    <test name="TestParallel Chrome" parallel="methods" thread-count="3">
+    <test name="TestParallel Chrome" parallel="methods" thread-count="4">
         <parameter name="browserValue" value="chrome"/>
 
         <classes>
@@ -14,7 +14,7 @@
 
         </classes>
     </test>
-    <test name="TestParallel Firefox" parallel="methods" thread-count="3">
+    <test name="TestParallel Firefox" parallel="methods" thread-count="4">
         <parameter name="browserValue" value="firefox"/>
         <classes>
             <class name="ua.rabota.TestLoginWithBuilder"/>

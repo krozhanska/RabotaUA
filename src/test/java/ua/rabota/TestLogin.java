@@ -45,7 +45,7 @@ public class TestLogin {
     loginPage.getLoginButton().click();
 
     assertTrue(loginPage.getNotValidCredanceMessage().getText().
-            contains("Неправильный логин или пароль."));
+            contains("Неправильный логин или пароль. тра ляля"));
 
   }
 
