@@ -9,7 +9,7 @@ import pages.MainPage;
 import java.util.concurrent.TimeUnit;
 
 import static io.qameta.allure.Allure.step;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 @Listeners({CustomTestListener.class})
 public class TestWrongEmail {
@@ -44,7 +44,7 @@ public class TestWrongEmail {
         step("Switch to the password field");
         loginPage.clickPassword();
         result= loginPage.getNotValidEmailMessage().isDisplayed();
-        assertTrue(result, "Not valid message not matching");
+        assertFalse(result, "Not valid message not matching");
 
     }
 
