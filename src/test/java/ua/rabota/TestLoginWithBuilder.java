@@ -3,10 +3,7 @@ package ua.rabota;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import pages.BrowserSetup;
-import pages.CabinetPage;
-import pages.LoginPage;
-import pages.MainPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 import static org.testng.Assert.assertTrue;
 
 @Listeners({CustomTestListener.class})
-public class TestLogin {
+public class TestLoginWithBuilder {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -34,13 +31,11 @@ public class TestLogin {
     step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
-    step("Open Login form");
+    step("Open Login form with builder");
     main.setEnterLogin();
-    LoginPage loginPage = new LoginPage(driver);
-    step("Enter Email :emailns@gmail.com");
-    loginPage.enterEmail("emailns@gmail.com");
-    step("Enter Password :123");
-    loginPage.enterPassword("123");
+    LoginPageBuilder loginPage = new LoginPageBuilder.Builder(driver)
+                                                     .enterEmail("emailns@gmail.com")
+                                                     .enterPassword("123").build();
     step("Click Login button");
     loginPage.getLoginButton().click();
 
@@ -56,13 +51,11 @@ public class TestLogin {
     step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
-    step("Open Login form");
+    step("Open Login form with builder");
     main.openLoginForm();
-    LoginPage loginPage = new LoginPage(driver);
-    step("Enter email: {0}");
-    loginPage.enterEmail(sEmail);
-    step("Enter password: {0}");
-    loginPage.enterPassword(sPass);
+    LoginPageBuilder loginPage = new LoginPageBuilder.Builder(driver)
+                                                      .enterEmail(sEmail)
+                                                      .enterPassword(sPass).build();
     step("Click Login button");
     loginPage.getLoginButton().click();
     CabinetPage cabinet = new CabinetPage(driver);

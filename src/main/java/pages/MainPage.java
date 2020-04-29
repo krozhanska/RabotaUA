@@ -15,9 +15,9 @@ public class MainPage extends BrowserSetup {
     @FindBy(css = "a.f-header-logo.fd-f-center-middle")
     private WebElement mainLogo;
     @Step("Open Login form")
-    public LoginPage openLoginForm() {
+    public void openLoginForm() {
         enterLogin.click();
-        return new LoginPage(this.driver);
+        //return new LoginPage(this.driver);
     }
 
     public WebElement getMainLogo() {
