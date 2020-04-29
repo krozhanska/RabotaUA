@@ -27,7 +27,7 @@ public class TestLoginWithBuilder {
   }
 
   @Test(groups = { "smoketest" })
-  public void testLog()  {
+  public void testLogWithBuilder()  {
     step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
@@ -47,7 +47,7 @@ public class TestLoginWithBuilder {
 
   @Test(dataProvider = "Authentication", dataProviderClass = DataProviderTest.class,
           groups = { "functest"})
-  public void testLoginPositive(String sEmail, String sPass, String sName, String NumberCV){
+  public void testLoginPositiveWithBuilder(String sEmail, String sPass, String sName, String NumberCV){
     step("Open browser");
     driver.get(baseUrl);
     MainPage main = new MainPage(driver);
