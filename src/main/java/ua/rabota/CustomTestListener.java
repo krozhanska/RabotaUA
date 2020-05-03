@@ -74,7 +74,7 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
                 IOException e) {
             e.printStackTrace();
         }
-        if (driver1!= null) makeScreenshot(driver1);
+       // if (driver1!= null) makeScreenshot(driver1);
 
 
     }
