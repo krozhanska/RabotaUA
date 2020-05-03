@@ -65,4 +65,23 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
 
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
+
+    private String composeTestName(ITestResult iTestResult) {
+        StringBuffer completeFileName = new StringBuffer();
+
+        completeFileName.append(iTestResult.getTestClass().getRealClass().getSimpleName()); // simplified class name
+        completeFileName.append("_");
+        completeFileName.append(iTestResult.getName()); // method name
+
+        // all the parameters information
+        Object[] parameters = iTestResult.getParameters();
+        for(Object parameter : parameters) {
+            completeFileName.append("_");
+            completeFileName.append(parameter);
+        }
+
+        // return the complete name and replace : by - (in the case the emulator have port as device name)
+        return completeFileName.toString().replace(":", "-");
+    }
+
 }
