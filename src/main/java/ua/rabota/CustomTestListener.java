@@ -12,7 +12,11 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import pages.BrowserSetup;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /*import java.util.logging.Logger;*/
 
@@ -35,7 +39,7 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
 
     @Override
     public void onTestFailure(ITestResult result) {
-        /*makeScreenshot();*/
+
         log.info("Test FAILED: " + result.getName());
         if (result.getThrowable()!=null) {
             result.getThrowable().printStackTrace();
@@ -53,10 +57,25 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
         WebDriver driver1 = null;
         try {
             driver1 = (WebDriver) field.get(result.getInstance());
+
+            File scrFile = ((TakesScreenshot) driver1).getScreenshotAs(OutputType.FILE);
+
+            // the filename is the folder name on test.screenshot.path property plus the completeTestName
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat format = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
+            String methodName = result.getName();
+            String path = "./target/screenshots/"+methodName +"_"+format.format(calendar.getTime())+".png";
+            File fileOutput  = new File (path);
+            org.apache.commons.io.FileUtils.copyFile(scrFile, fileOutput);
+
         } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (
+                IOException e) {
             e.printStackTrace();
         }
         if (driver1!= null) makeScreenshot(driver1);
+
 
     }
 
@@ -66,22 +85,4 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
-    private String composeTestName(ITestResult iTestResult) {
-        StringBuffer completeFileName = new StringBuffer();
-
-        completeFileName.append(iTestResult.getTestClass().getRealClass().getSimpleName()); // simplified class name
-        completeFileName.append("_");
-        completeFileName.append(iTestResult.getName()); // method name
-
-        // all the parameters information
-        Object[] parameters = iTestResult.getParameters();
-        for(Object parameter : parameters) {
-            completeFileName.append("_");
-            completeFileName.append(parameter);
-        }
-
-        // return the complete name and replace : by - (in the case the emulator have port as device name)
-        return completeFileName.toString().replace(":", "-");
     }
-
-}
