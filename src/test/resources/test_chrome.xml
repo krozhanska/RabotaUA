@@ -8,7 +8,7 @@
     <!--<test name="Chrome test">-->
     <test name="TestParallel Chrome" parallel="methods" thread-count="3">
        <classes>
-           <class name="ua.rabota.TestLogin"/>
+           <!--<class name="ua.rabota.TestLogin"/>-->
            <class name="ua.rabota.TestCabinetPage"/>
            <class name="ua.rabota.TestWrongEmail"/>
 

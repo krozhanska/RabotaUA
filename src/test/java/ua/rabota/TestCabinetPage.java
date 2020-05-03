@@ -60,8 +60,9 @@ public class TestCabinetPage {
 
     @AfterClass(alwaysRun = true)
     public void tearDown()  {
-        driver.quit();
-        driver = null;
+
+        this.driver.quit();
+        this.driver = null;
     }
 
 

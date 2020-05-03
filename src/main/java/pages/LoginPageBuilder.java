@@ -72,5 +72,7 @@ public class LoginPageBuilder extends BrowserSetup {
         }
 
     }
-
+    public WebDriver getDriver() {
+        return driver;
+    }
 }

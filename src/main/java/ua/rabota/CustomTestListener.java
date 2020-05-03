@@ -6,8 +6,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.*;
+import org.testng.IInvokedMethodListener;
+import org.testng.ISuiteListener;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import pages.BrowserSetup;
+
+import java.lang.reflect.Field;
 
 /*import java.util.logging.Logger;*/
 
@@ -35,7 +40,23 @@ public class CustomTestListener extends BrowserSetup implements ITestListener, I
         if (result.getThrowable()!=null) {
             result.getThrowable().printStackTrace();
         }
-        makeScreenshot(getDriver());
+        Class clazz = result.getTestClass().getRealClass();
+        Field field = null;
+        try {
+            field = clazz.getDeclaredField("driver");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
+        field.setAccessible(true);
+
+        WebDriver driver1 = null;
+        try {
+            driver1 = (WebDriver) field.get(result.getInstance());
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (driver1!= null) makeScreenshot(driver1);
 
     }
 

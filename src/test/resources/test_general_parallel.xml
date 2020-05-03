@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="General_test_suite" parallel="tests" thread-count="4">
+<suite name="General_test_suite" parallel="tests" thread-count="2">
     <listeners>
         <listener class-name="ua.rabota.CustomTestListener"/>
     </listeners>
-    <test name="TestParallel Chrome" parallel="methods" thread-count="4">
+    <test name="TestParallel Chrome" parallel="methods" thread-count="3">
         <parameter name="browserValue" value="chrome"/>
 
         <classes>
@@ -14,7 +14,7 @@
 
         </classes>
     </test>
-    <test name="TestParallel Firefox" parallel="methods" thread-count="4">
+    <test name="TestParallel Firefox" parallel="methods" thread-count="3">
         <parameter name="browserValue" value="firefox"/>
         <classes>
             <class name="ua.rabota.TestLoginWithBuilder"/>

@@ -66,7 +66,7 @@ public class CabinetPage extends BrowserSetup {
 
     }
 
-    /*public WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
-    }*/
+    }
 }
